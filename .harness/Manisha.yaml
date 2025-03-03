@@ -58,5 +58,4 @@ pipeline:
                     command: echo "starting the build"
         delegateSelectors:
           - linux-delegate-tx-w
-          - docker-delegate
           - linux-tx
