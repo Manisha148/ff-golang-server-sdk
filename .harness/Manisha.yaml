@@ -34,5 +34,4 @@ pipeline:
                     shell: Sh
                     command: echo "starting the build"
         delegateSelectors:
-          - linux-delegate-tx-project
-          - linux-porj
+          - gcp-delegate-p
