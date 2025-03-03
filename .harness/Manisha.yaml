@@ -56,3 +56,6 @@ pipeline:
                   spec:
                     shell: Sh
                     command: echo "starting the build"
+        delegateSelectors:
+          - docker-delegate
+          - docker-delegate-tx
