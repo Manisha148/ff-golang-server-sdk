@@ -29,8 +29,30 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: echo "hello"
+                        script: echo "delegate is up and running"
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
         tags: {}
+    - stage:
+        name: build stage
+        identifier: build_stage
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Docker
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: dotNetBuild
+                  identifier: dotNetBuild
+                  spec:
+                    shell: Sh
+                    command: echo "starting the build"
