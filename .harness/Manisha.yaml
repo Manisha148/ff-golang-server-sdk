@@ -57,5 +57,5 @@ pipeline:
                     shell: Sh
                     command: echo "starting the build"
         delegateSelectors:
-          - linux-delegate-tx-w
-          - linux-tx
+          - linux-delegate-tx-project
+          - linux-porj
