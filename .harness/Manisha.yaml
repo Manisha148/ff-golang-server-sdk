@@ -57,8 +57,6 @@ pipeline:
                     shell: Sh
                     command: echo "starting the build"
         delegateSelectors:
-          - linux-delegate-tx
           - linux-delegate-tx-w
-          - linux-tx
-          - docker-delegate-tx
           - docker-delegate
+          - linux-tx
