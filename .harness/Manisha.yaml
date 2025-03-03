@@ -12,29 +12,25 @@ pipeline:
         build: <+input>
   stages:
     - stage:
-        name: Build
-        identifier: Build
+        name: test
+        identifier: test
         description: ""
-        type: CI
+        type: Custom
         spec:
-          cloneCodebase: true
-          platform:
-            os: Windows
-            arch: Arm64
-          runtime:
-            type: Docker
-            spec: {}
           execution:
             steps:
               - step:
-                  type: Run
-                  name: Echo Welcome message
-                  identifier: Echo_Welcome_message
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
                   spec:
-                    connectorRef: account.harnessImage
-                    image: <+input>
-                    shell: Sh
-                    command: echo "Welcome to Harness CI"
-        delegateSelectors:
-          - docker-delegate
-          - docker-delegate-tx
+                    shell: Bash
+                    executionTarget: {}
+                    source:
+                      type: Inline
+                      spec:
+                        script: echo "hello"
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
