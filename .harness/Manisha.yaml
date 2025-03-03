@@ -33,3 +33,7 @@ pipeline:
                   spec:
                     shell: Sh
                     command: echo "Welcome to Harness CI"
+        delegateSelectors:
+          - docker-delegate
+        when:
+          pipelineStatus: All
