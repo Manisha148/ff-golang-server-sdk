@@ -1,0 +1,35 @@
+pipeline:
+  name: Manisha
+  identifier: Manisha
+  projectIdentifier: DemoTx
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: ManishaGithub
+        repoName: ff-golang-server-sdk
+        build: <+input>
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Docker
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Echo Welcome message
+                  identifier: Echo_Welcome_message
+                  spec:
+                    shell: Sh
+                    command: echo "Welcome to Harness CI"
