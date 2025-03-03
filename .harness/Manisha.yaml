@@ -31,9 +31,7 @@ pipeline:
                   name: Echo Welcome message
                   identifier: Echo_Welcome_message
                   spec:
+                    connectorRef: account.harnessImage
+                    image: <+input>
                     shell: Sh
                     command: echo "Welcome to Harness CI"
-        delegateSelectors:
-          - docker-delegate
-        when:
-          pipelineStatus: All
