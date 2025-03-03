@@ -35,3 +35,6 @@ pipeline:
                     image: <+input>
                     shell: Sh
                     command: echo "Welcome to Harness CI"
+        delegateSelectors:
+          - docker-delegate
+          - docker-delegate-tx
